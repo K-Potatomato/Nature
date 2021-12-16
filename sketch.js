@@ -35,10 +35,12 @@ function draw() {
       particles.splice(i, 1);
     }
   }
-  image(img, 50, 30,1100,940);
+  image(img, 55, 30,1100,930);
   noStroke();
   fill(255);
   rect(0, 0, width, 30);
+  fill(0);
+  rect(0, height-40, width, 30);
   fill(255);
   rect(0, height-30, width, 30);
 }

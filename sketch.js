@@ -1,10 +1,12 @@
 let img;
 let particles = [];
 let particles2 = [];
+let angle = 0;
 
 function setup() {
   img = loadImage("people.png");
-  createCanvas(1200, 1000);
+  createCanvas(1000, 1000);
+  angleMode(DEGREES);
 }
 
 function draw() {
@@ -35,12 +37,88 @@ function draw() {
       particles.splice(i, 1);
     }
   }
-  image(img, 55, 30,1100,930);
-  noStroke();
-  fill(255);
-  rect(0, 0, width, 30);
-  fill(0);
-  rect(0, height-40, width, 30);
-  fill(255);
-  rect(0, height-30, width, 30);
+  image(img, -80, -20, 1200, 1020);
+  push();
+  translate(500, 500);
+  rotate(45);
+  rotate(angle);
+  noFill();
+  rectMode(CENTER);
+  stroke(255);
+  strokeWeight(10);
+  rect(0, 0, 1005, 1005);
+  stroke(255, 220);
+  strokeWeight(10);
+  rect(0, 0, 905, 905);
+  stroke(255, 200);
+  strokeWeight(10);
+  rect(0, 0, 805, 805);
+  stroke(255, 180);
+  strokeWeight(10);
+  rect(0, 0, 705, 705);
+  stroke(255, 160);
+  strokeWeight(8);
+  rect(0, 0, 605, 605);
+  stroke(255, 105);
+  strokeWeight(7);
+  rect(0, 0, 505, 505);
+  stroke(255, 85);
+  strokeWeight(6);
+  rect(0, 0, 405, 405);
+  stroke(255, 65);
+  strokeWeight(5);
+  rect(0, 0, 305, 305);
+  stroke(255, 45);
+  strokeWeight(4);
+  rect(0, 0, 205, 205);
+  stroke(255, 25);
+  strokeWeight(3);
+  rect(0, 0, 105, 105);
+  stroke(255, 5);
+  strokeWeight(2);
+  rect(0, 0, 10, 10);
+  angle = angle + 0.1;
+  pop();
+
+  push();
+  translate(500, 500);
+  rotate(5);
+  rotate(-angle);
+  noFill();
+  rectMode(CENTER);
+  stroke(255, 200);
+  strokeWeight(10);
+  rect(0, 0, 1005, 1005);
+  stroke(255, 220);
+  strokeWeight(10);
+  rect(0, 0, 905, 905);
+  stroke(255, 200);
+  strokeWeight(10);
+  rect(0, 0, 805, 805);
+  stroke(255, 180);
+  strokeWeight(10);
+  rect(0, 0, 705, 705);
+  stroke(255, 160);
+  strokeWeight(8);
+  rect(0, 0, 605, 605);
+  stroke(255, 105);
+  strokeWeight(7);
+  rect(0, 0, 505, 505);
+  stroke(255, 85);
+  strokeWeight(6);
+  rect(0, 0, 405, 405);
+  stroke(255, 65);
+  strokeWeight(5);
+  rect(0, 0, 305, 305);
+  stroke(255, 45);
+  strokeWeight(4);
+  rect(0, 0, 205, 205);
+  stroke(255, 25);
+  strokeWeight(3);
+  rect(0, 0, 105, 105);
+  stroke(255, 5);
+  strokeWeight(2);
+  rect(0, 0, 10, 10);
+  angle = angle + 0.1;
+  pop();
 }

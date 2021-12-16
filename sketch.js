@@ -2,11 +2,17 @@ let img;
 let particles = [];
 let particles2 = [];
 let angle = 0;
+let song;
+
+function preload() {
+  song = loadSound('ColdBlue2.mp3');
+}
 
 function setup() {
   img = loadImage("people.png");
   createCanvas(1000, 1000);
   angleMode(DEGREES);
+  song.loop();
 }
 
 function draw() {

@@ -2,14 +2,17 @@ let img;
 let particles = [];
 let particles2 = [];
 let angle = 0;
+let sound;
 
 function setup() {
   img = loadImage("people.png");
   createCanvas(1000, 1000);
   angleMode(DEGREES);
+  sound = loadSound('ColdBlue.mp3');
 }
 
 function draw() {
+  sound.loop();
   background(0);
   for (let i = 0; i < 3; i++) {
     particles.push(new Particle(width / 2, 0));

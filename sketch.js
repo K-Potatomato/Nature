@@ -1,35 +1,44 @@
-let x = 600;
-let y = 450;
-let ch = 3;
 let img;
-let ball = [];
-let ball2 = [];
+let particles = [];
+let particles2 = [];
 
 function setup() {
   img = loadImage("people.png");
   createCanvas(1200, 1000);
-  for (let i = 0; i < 80; i++) {
-    ball[i] = new Ball();
-  }
 }
 
 function draw() {
-  background(255);
-  for (let i = 0; i < 80; i++) {
-    ball[i].update();
-    ball[i].show();
+  background(0);
+  for (let i = 0; i < 3; i++) {
+    particles.push(new Particle(width / 2, 0));
   }
-  image(img, 0, 0);
+  for (let i = 0; i < 3; i++) {
+    particles2.push(new Particle(width / 2, height));
+  }
+
+  for (let particle of particles) {
+    let gravity = createVector(0, 0.2);
+    particle.applyForce(gravity);
+    particle.update();
+    particle.show();
+  }
+
+  for (let particle2 of particles2) {
+    let gravity2 = createVector(0, -0.2);
+    particle2.applyForce(gravity2);
+    particle2.update();
+    particle2.show();
+  }
+
+  for (let i = particles.length - 1; i >= 0; i--) {
+    if (particles[i].finished()) {
+      particles.splice(i, 1);
+    }
+  }
+  image(img, 50, 30,1100,940);
   noStroke();
   fill(255);
-  rect(0, height - 60, width, 60);
-  // noStroke();
-  // fill(0);
-  // ellipse(x, y, 20, 20);
-  // if(y<50){
-  // ch=3;
-  // }else if(450<y){
-  // ch=-3;
-  // }
-  // y+=ch;
+  rect(0, 0, width, 30);
+  fill(255);
+  rect(0, height-30, width, 30);
 }

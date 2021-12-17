@@ -18,10 +18,10 @@ function setup() {
 function draw() {
   background(0);
   for (let i = 0; i < 3; i++) {
-    particles.push(new Particle(width / 2, 0));
+    particles.push(new Particle(width / 2-10, 0));
   }
   for (let i = 0; i < 3; i++) {
-    particles2.push(new Particle(width / 2, height));
+    particles2.push(new Particle(width / 2-10, height));
   }
 
   for (let particle of particles) {
@@ -43,10 +43,10 @@ function draw() {
       particles.splice(i, 1);
     }
   }
-  image(img, -80, -20, 1200, 1020);
+  image(img, -90, -20, 1200, 1020);
   push();
   translate(500, 500);
-  rotate(45);
+  rotate();
   rotate(angle);
   noFill();
   rectMode(CENTER);
@@ -88,7 +88,7 @@ function draw() {
 
   push();
   translate(500, 500);
-  rotate(45);
+  rotate();
   rotate(-angle);
   noFill();
   rectMode(CENTER);

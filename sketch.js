@@ -88,7 +88,7 @@ function draw() {
 
   push();
   translate(500, 500);
-  rotate(5);
+  rotate(45);
   rotate(-angle);
   noFill();
   rectMode(CENTER);
